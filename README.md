@@ -56,7 +56,7 @@ You will need at least the following:
 
 ## Completion Requirements:
 
-The completed assignment should:
+The completed assignment should: 
 
 * have a way to create an account (sign up) with at least
   - first name
