@@ -1,0 +1,132 @@
+/* font-family: 'Libre Barcode 39 Text', cursive; */
+/* font-family: 'Rock Salt', cursive; */
+/* font-family: 'Just Another Hand', cursive; */
+
+/* Dark Blue: #0B486B rgb(11, 72, 107) */
+/* Blue Green: #3B8686 rgb(59, 134, 134) */
+/* Greenish: #79BD9A */
+/* Light Green: #A8DBA8 rgb(168, 219, 168) */
+body {
+  font-family: 'Just Another Hand', cursive;
+  font-size: 30px;
+}
+.heading {
+  font-family: 'Rock Salt', cursive; 
+}
+.intro {
+  padding: 20px 0 4px; 
+}
+.logo {
+  padding-left: 15px !important;
+  font-family: 'Libre Barcode 39 Text', cursive;
+  font-size: 63px !important;
+  color: #A8DBA8 !important;
+}
+.shadow {
+  text-shadow: 2px 2px 4px #0B486B;
+}
+.right-button {
+  background-color: #A8DBA8;
+  color: #3B8686;
+}
+.right-side {
+  border-bottom-left-radius: 20px;
+  background-color: #3B8686;
+  height: 570px;
+  color: #A8DBA8;
+}
+.left-button {
+  background-color: #3B8686;
+  color: #A8DBA8;
+}
+.left-side {
+  border-top-right-radius: 20px;
+  background-color: #A8DBA8;
+  height: 570px;
+  color: #3B8686;
+}
+.button {
+  padding-top: 46px !important;
+}
+.main {
+  background: linear-gradient(rgb(59, 134, 134),rgb(168, 219, 168));
+  height: 570px;
+  margin-bottom: 0;
+}
+nav {
+  padding-top: 10px;
+  height: 80px;
+  /* background-color: #0B486B; */
+  background: linear-gradient(rgb(11, 72, 107), rgb(59, 134, 134));
+}
+footer {
+  height: 150px;
+  background-color: #0B486B;
+  background: linear-gradient(rgb(168, 219, 168), rgb(11, 72, 107));
+}
+.dancing-img {
+    width: 550px;
+    height: 224px;
+    padding-left: 125px;
+    padding-top: 5px;
+}
+::placeholder { 
+    color: #0B486B;
+    opacity: 1;
+}
+.move-aside {
+  padding-left: 50px;
+}
+#move-aside {
+  padding-left: 50px;
+}
+.flash {
+  border-radius: 2px;
+  padding: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.flash.info {
+  background-color: #7cee7c;
+  position: absolute !important;
+  width: 100% !important;
+}
+
+.flash.warning {
+  background-color: #ee7c7c;
+  position: absolute !important;
+  width: 100% !important;
+}
+
+.flash a, .flash a:link, .flash a:active, .flash a:visited {
+  position: absolute;
+  right: 20px;
+  text-decoration:  none;
+  color: black;
+  animation: beckon;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.flash a:hover {
+  color: white;
+}
+
+.flash.hide {
+  display: none;
+}
+
+@keyframes beckon {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

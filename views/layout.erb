@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Da Wave Rap Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Libre+Barcode+39+Text|Rock+Salt" rel="stylesheet">
+  <link rel="shortcut icon" href="images/wave-logo.png" />
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="logo brand-logo">Da Wave</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
+
+
+  <% flash.keys.each do |type| %>
+    <div class="flash <%= type %>">
+      <%= flash[type] %>
+      <a class="close-button" href="#">x</a>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
+  <footer>
+  </footer>
+  <script src="main.js" type="text/javascript"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+</body>
+</html>

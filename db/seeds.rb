@@ -1,0 +1,16 @@
+require "./models"
+
+User.create(fname: "Yorvin", lname: "Rosario", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "Yorvi", password: "12345")
+User.create(fname: "Orlando", lname: "Caraballo", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "orlandoc", password: "12345")
+User.create(fname: "Chris", lname: "Fernandes", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "chris", password: "12345")
+User.create(fname: "Chris", lname: "Keddell", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "chrisKed", password: "12345")
+User.create(fname: "Michael", lname: "Monohan", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "Mono_Mike", password: "12345")
+User.create(fname: "Michael", lname: "Salvatore", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "Salvatore_God", password: "12345")
+User.create(fname: "Rashid", lname: "Armand", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "Iam90", password: "12345")
+User.create(fname: "Tony", lname: "Macas", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "tony", password: "12345")
+User.create(fname: "Martin", lname: "Sosa", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "Martini", password: "12345")
+User.create(fname: "Mariia", lname: "Abashina", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "ТортБосс", password: "12345")
+User.create(fname: "Kevin", birth: "07/07/1995", lname: "Hesse", email: "jorvinrosario7@gmail.com", username: "KevBreezy", password: "12345")
+User.create(fname: "Jonathan", lname: "Cespedes", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "MiaJonVice", password: "12345")
+User.create(fname: "Omar", lname: "Ahmed", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "Omar.exe", password: "12345")
+User.create(fname: "Minhal", lname: "Gardezi", email: "jorvinrosario7@gmail.com", birth: "07/07/1995", username: "KingMinghal", password: "12345")
