@@ -7,9 +7,20 @@ require "./models"
 
 include SendGrid
 
-enable :sessions
+# enable :sessions
+set :sessions, true
 
-set :database, "sqlite3:app.db"
+# this will ensure this will only be used locally
+configure :development do
+  set :database, "sqlite3:app.db"
+end
+
+# this will ensure this will only be used on production
+configure :production do
+  # this environment variable is auto generated/set by heroku
+  #   check Settings > Reveal Config Vars on your heroku app admin panel
+  set :database, ENV["DATABASE_URL"]
+end
 
 get "/" do
   erb :home
@@ -71,4 +82,17 @@ post "/sign-up" do
   flash[:info] = "Thank you for signing up"
 
   redirect "/"
+end
+
+get "/sign-out" do
+
+  session[:user_id] = nil
+
+  flash[:info] = "You have been signed out"
+
+  redirect "/"
+end
+
+get "/users" do
+  User.all.map { |user| "Username: #{user.username} | Password: #{user.password}" }.join(", ")
 end

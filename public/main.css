@@ -9,6 +9,8 @@
 body {
   font-family: 'Just Another Hand', cursive;
   font-size: 30px;
+  background-color: #0B486B;
+  color: whitesmoke;
 }
 .heading {
   font-family: 'Rock Salt', cursive; 
@@ -64,6 +66,29 @@ footer {
   background-color: #0B486B;
   background: linear-gradient(rgb(168, 219, 168), rgb(11, 72, 107));
 }
+.absolute {
+  position: absolute;
+  margin-left: 300px;
+}
+.side-nav {
+  background: linear-gradient(rgb(59, 134, 134),rgb(168, 219, 168));
+  height: 100%;
+  width: 150px;
+  display: block;
+  font-size: 20px;
+  line-height: 50px;
+}
+.profile-img {
+  border: 3px solid #A8DBA8;
+  border-radius: 100%;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #0B486B;
+}
 .dancing-img {
     width: 550px;
     height: 224px;
@@ -73,6 +98,14 @@ footer {
 ::placeholder { 
     color: #0B486B;
     opacity: 1;
+}
+.border {
+  border: 2px solid #A8DBA8;
+  border-radius: 30px;
+  margin: 20px;
+}
+.post {
+  padding: 20px 20px;
 }
 .move-aside {
   padding-left: 50px;

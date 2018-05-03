@@ -13,12 +13,17 @@
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="logo brand-logo">Da Wave</a>
+      <a href="/" class="logo brand-logo">Da Wave</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
       </ul>
+        <% if session[:user_id]%>
+        <!-- logged in -->
+        <a>
+        <% else %>
+        <!-- logged out -->
+        <% end %>
     </div>
   </nav>
-
 
   <% flash.keys.each do |type| %>
     <div class="flash <%= type %>">
