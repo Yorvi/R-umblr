@@ -1,5 +1,5 @@
 
-<div class="row" style="margin-bottom: 0px;">
+<div class="row">
 
   <div class="col s2" style="padding-left: 0px; padding-right: 0px">
     <div class="side-nav center" style="float: left; margin-left: 0;">
@@ -22,16 +22,19 @@
   <br>
   <br>
   <br>
-  <div class="col s6 push-s1 border">
-    <form class="post" action="/posting" method="post">
-      Whats on your mental? <textarea type="text" name="post-content" class="materialize-textarea" data-length="120" style="color: #A8DBA8"></textarea><br>
+  <div class="col s6 push-s3 border">
+    <form class="post" action="/post" method="post">
+      Whats on your mental? 
+      <input type="text" name="content" style="color: #A8DBA8"></input><br>
       <input class="btn-small left-button" type="submit" value="Post"> 
     </form>
+  </div>
+  <% @posts.reverse.each do |post| %>
+  <div class="col s6 push-s3 border" style="background-color: #3B8686;">
+    <div class="postings">
+      <img src="images/placeholder-face-big.png" height="30" width="30" style="margin: 0 5px 0 0; border: 2px solid #A8DBA8; border-radius: 100%;"><%= @user.username %><br>
+      <p><%= post.content %></p>
+    </div>
   </div> 
-  <div class="col s6 push-s1 border">
-    <form class="post" action="/posts" method="get">
-      <img src="images/placeholder-face-big.png" height="30" width="30" style="margin: 0 5px 0 0;">post by USER<br>
-      post content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, ullam laudantium, corrupti dolor distinctio dicta itaque voluptates veritatis aperiam odio quas repudiandae quia pariatur nesciunt optio reprehenderit. Debitis, quidem repudiandae?
-    </form>
-  </div> 
+  <% end %>
 </div>

@@ -23,27 +23,51 @@ configure :production do
 end
 
 get "/" do
-  erb :home
+  if session[:user_id]
+    @posts = Post.all
+    erb :timeline
+  else
+   erb :home
+  end
 end
 
 get "/profile" do
-  erb :profile
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+    erb :profile
+  else
+    redirect "/"
+  end
 end
 
 get "/timeline" do
-  if session[:user_id] == nil
-    flash[:warning] = "Woah there pal, you need to be logged in to access this webpage"
-    redirect "/sign_up"
-  end
-  erb :timeline
-end
+  @posts = Post.all
 
-post "/posting" do
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+    erb :timeline
+  else
+    erb :home
+  end
+
+  if session[:user_id] == nil
+
+    flash[:warning] = "Woah there pal, you need to be logged in to access this webpage"
+    redirect "/"
+  end
+  
+    erb :timeline
+  end
+
+post "/post" do
   @user = User.find(session[:user_id]) 
   @post = Post.create(
     user_id: @user.id,
     content: params[:content]
   )
+
+  # @posts = Post.all
+
   redirect "/timeline"
 end
 

@@ -21,16 +21,13 @@
   <br>
   <br>
   <br>
-  <div class="col s6 push-s1 border">
-    <form class="post" action="/action_page.php" method="get">
-      <img src="images/placeholder-face-big.png" height="30" width="30" style="margin: 0 5px 0 0;">post by USER<br>
-      post content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, ullam laudantium, corrupti dolor distinctio dicta itaque voluptates veritatis aperiam odio quas repudiandae quia pariatur nesciunt optio reprehenderit. Debitis, quidem repudiandae?
-    </form>
+  <% @user.posts.reverse.each do |post| %>
+  <div class="col s6 push-s3 border" style="background-color: #3B8686;">
+    <div class="postings">
+      <img src="images/placeholder-face-big.png" height="30" width="30" style="margin: 0 5px 0 0; border: 2px solid #A8DBA8; border-radius: 100%;"><%= @user.username %><br>
+      <p><%= post.content %></p>
+    </div>
   </div> 
-  <div class="col s6 push-s1 border">
-    <form class="post" action="/posting" method="post">
-      <img src="images/placeholder-face-big.png" height="30" width="30" style="margin: 0 5px 0 0;">post by USER<br>
-      post content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, ullam laudantium, corrupti dolor distinctio dicta itaque voluptates veritatis aperiam odio quas repudiandae quia pariatur nesciunt optio reprehenderit. Debitis, quidem repudiandae?
-    </form>
-  </div> 
+  <% end %>
 </div>
+

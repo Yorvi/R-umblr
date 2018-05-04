@@ -79,15 +79,16 @@ footer {
 .absolute {
   position: absolute;
   margin-left: 300px;
-
 }
 .side-nav {
-  background: linear-gradient(rgb(59, 134, 134),rgb(168, 219, 168));
-  height: 100%;
+  background: linear-gradient(rgb(59, 134, 134),rgb(168, 219, 168),rgb(168, 219, 168),rgb(59, 134, 134), rgb(11, 72, 107));
+  height: 1200px;
   width: 150px;
   display: block;
   font-size: 20px;
   line-height: 50px;
+  position: absolute;
+
 }
 .profile-img {
   border: 3px solid #A8DBA8;
@@ -114,6 +115,9 @@ a {
   border: 2px solid #A8DBA8;
   border-radius: 30px;
   margin: 20px;
+}
+.postings {
+  padding: 20px;
 }
 .post {
   padding: 20px 20px;
