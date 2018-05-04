@@ -6,7 +6,3 @@ closeButton.addEventListener("click", event => {
 
   flashPanel.classList.add("hide")
 })
-document.addEventListener('DOMContentLoaded', function () {
-  var elems = document.querySelectorAll('select');
-  var instances = M.FormSelect.init(elems, options);
-});

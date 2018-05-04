@@ -55,6 +55,16 @@ body {
   height: 570px;
   margin-bottom: 0;
 }
+.non-button {
+  border: 2px solid #A8DBA8;
+  /* border-radius: 30px; */
+  padding: 13px 30px 10px;
+}
+.non-button:hover {
+  border: 2px solid #7cee7c;
+  /* border-radius: 30px; */
+  padding: 13px 30px 10px;
+}
 nav {
   padding-top: 10px;
   height: 80px;
@@ -69,6 +79,7 @@ footer {
 .absolute {
   position: absolute;
   margin-left: 300px;
+
 }
 .side-nav {
   background: linear-gradient(rgb(59, 134, 134),rgb(168, 219, 168));
@@ -117,19 +128,21 @@ a {
   border-radius: 2px;
   padding: 20px;
   margin-bottom: 10px;
-  position: relative;
+  position: absolute;
 }
 
 .flash.info {
   background-color: #7cee7c;
-  position: absolute !important;
-  width: 100% !important;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
 }
 
 .flash.warning {
   background-color: #ee7c7c;
-  position: absolute !important;
-  width: 100% !important;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
 }
 
 .flash a, .flash a:link, .flash a:active, .flash a:visited {
@@ -140,10 +153,12 @@ a {
   animation: beckon;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+  z-index: 2;
 }
 
 .flash a:hover {
   color: white;
+  z-index: 2;
 }
 
 .flash.hide {

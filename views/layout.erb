@@ -8,23 +8,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link rel="stylesheet" href="main.css">
   <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Libre+Barcode+39+Text|Rock+Salt" rel="stylesheet">
-  <link rel="shortcut icon" href="images/wave-logo.png" />
+  <link rel="shortcut icon" href="images/wave-hand.gif" />
 </head>
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="/" class="logo brand-logo">Da Wave</a>
+      <a href="/timeline" class="logo brand-logo">Da Wave</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
       </ul>
         <% if session[:user_id]%>
         <!-- logged in -->
-        <a>
+
         <% else %>
         <!-- logged out -->
         <% end %>
     </div>
   </nav>
-
   <% flash.keys.each do |type| %>
     <div class="flash <%= type %>">
       <%= flash[type] %>

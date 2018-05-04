@@ -26,8 +26,29 @@ get "/" do
   erb :home
 end
 
+get "/profile" do
+  erb :profile
+end
+
 get "/timeline" do
+  if session[:user_id] == nil
+    flash[:warning] = "Woah there pal, you need to be logged in to access this webpage"
+    redirect "/sign_up"
+  end
   erb :timeline
+end
+
+post "/posting" do
+  @user = User.find(session[:user_id]) 
+  @post = Post.create(
+    user_id: @user.id,
+    content: params[:content]
+  )
+  redirect "/timeline"
+end
+
+get "/sign_up" do
+  erb :sign_up
 end
 
 post "/sign-in" do
