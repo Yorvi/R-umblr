@@ -7,10 +7,8 @@
         <img class="profile-img" src="images/placeholder-face-big.png" height="100" width="100">
         <li><a href="/timeline">HOME</a></li>
         <li><a href="/profile">PROFILE</a></li>
-        <li><a href="/notifications">NOTIFICATIONS</a></li>
-        <li><a href="/hot">WHAT'S HOT</a></li>
         <li><a href="/help">HELP & SUPPORT</a></li>
-        <li><a href="/settings">SETTINGS & PRIVACY</a></li>
+        <li><a href="/settings">SETTINGS</a></li>
         <li><a href="/sign-out">LOG OUT</a></li>
         <br>
         <br>
@@ -32,7 +30,7 @@
   <% @posts.reverse.each do |post| %>
   <div class="col s6 push-s3 border" style="background-color: #3B8686;">
     <div class="postings">
-      <img src="images/placeholder-face-big.png" height="30" width="30" style="margin: 0 5px 0 0; border: 2px solid #A8DBA8; border-radius: 100%;"><%= @user.username %><br>
+      <img src="images/placeholder-face-big.png" height="30" width="30" style="margin: 0 5px 0 0; border: 2px solid #A8DBA8; border-radius: 100%;"><a href="#"><%= post.user.username %></a><br>
       <p><%= post.content %></p>
     </div>
   </div> 

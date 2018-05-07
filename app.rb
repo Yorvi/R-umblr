@@ -7,8 +7,7 @@ require "./models"
 
 include SendGrid
 
-# enable :sessions
-set :sessions, true
+# set :sessions, true
 
 # this will ensure this will only be used locally
 configure :development do
@@ -22,6 +21,8 @@ configure :production do
   set :database, ENV["DATABASE_URL"]
 end
 
+enable :sessions
+
 get "/" do
   if session[:user_id]
     @posts = Post.all
@@ -34,21 +35,14 @@ end
 get "/profile" do
   if session[:user_id]
     @user = User.find(session[:user_id])
-    erb :profile
+  erb :profile
   else
-    redirect "/"
+  redirect "/"
   end
 end
 
 get "/timeline" do
   @posts = Post.all
-
-  if session[:user_id]
-    @user = User.find(session[:user_id])
-    erb :timeline
-  else
-    erb :home
-  end
 
   if session[:user_id] == nil
 
@@ -140,4 +134,32 @@ end
 
 get "/users" do
   User.all.map { |user| "Username: #{user.username} | Password: #{user.password}" }.join(", ")
+end
+
+get "/settings" do
+  if session[:user_id]
+    erb :settings
+  else
+  redirect "/"
+  end
+end
+
+post "/settings" do
+  @user = User.find(session[:user_id])
+
+  if @user.username == params[:username]  && @user.password == params[:password]
+
+    @user.posts.each do |post|
+      Post.destroy(post.id)
+    end
+
+    User.destroy(session[:user_id])
+      session[:user_id] = nil
+      flash[:warning] = "I see how it is...😒 😐 😤"
+    redirect "/sign_up"
+  else 
+    flash[:warning] = "Your username or password is incorrect"
+    redirect "/settings"
+
+  end
 end
