@@ -7,7 +7,7 @@ require "./models"
 
 include SendGrid
 
-# set :sessions, true
+set :sessions, true
 
 # this will ensure this will only be used locally
 configure :development do
@@ -21,7 +21,7 @@ configure :production do
   set :database, ENV["DATABASE_URL"]
 end
 
-enable :sessions
+# enable :sessions
 
 get "/" do
   if session[:user_id]
