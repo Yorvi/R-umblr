@@ -88,23 +88,23 @@ post "/sign-in" do
 end
 
 post "/sign-up" do
-@email = params[:email]
-  from = Email.new(email: ENV["PERSONAL_EMAIL"])
-  to = Email.new(email: @email )
-  subject = "Thank you, For Signing-Up"
-  content = Content.new(
-    type: "text/plain",
-    value: "Thank you, " + params[:fname] + " for signing up to Da Wave Rap Blog, the most Official Rap Blog on the web!"
-  )
+# @email = params[:email]
+#   from = Email.new(email: ENV["PERSONAL_EMAIL"])
+#   to = Email.new(email: @email )
+#   subject = "Thank you, For Signing-Up"
+#   content = Content.new(
+#     type: "text/plain",
+#     value: "Thank you, " + params[:fname] + " for signing up to Da Wave Rap Blog, the most Official Rap Blog on the web!"
+#   )
 
-# create mail object with from, subject, to and content
-  mail = Mail.new(from, subject, to, content)
+# # create mail object with from, subject, to and content
+#   mail = Mail.new(from, subject, to, content)
 
-# sets up the api key
-  sg = SendGrid::API.new(
-    api_key: ENV["SENDGRID_API_KEY"]
-  )
-  response = sg.client.mail._("send").post(request_body: mail.to_json)
+# # sets up the api key
+#   sg = SendGrid::API.new(
+#     api_key: ENV["SENDGRID_API_KEY"]
+#   )
+#   response = sg.client.mail._("send").post(request_body: mail.to_json)
 
 
   @user = User.create(
